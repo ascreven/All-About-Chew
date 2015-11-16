@@ -1,0 +1,45 @@
+<%= form_for @profile do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@profile.errors.count, "error") %> prohibited
+        this profile from being saved:
+      </h2>
+      <ul>
+        <% @profile.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :gender %>
+  <%= f.select :gender, [["Male", 'Male'], ["Female", "Female"]] %>
+
+  <%= f.label :breed %>
+  <%= f.text_field :breed %>
+
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+
+ <%= select_tag 'State', options_for_select(us_states),:name=>"profile[state]",:id=>"state"%>
+
+
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+
+  <%=f.label :pro_pic %>
+  <%= f.file_field :pro_pic, class: "form-control" %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description, class: "description_para" %>
+
+  <p>
+    <%= f.submit %>
+    <%= link_to 'Back', :back, class: "back" %>
+  </p>
+<% end %>

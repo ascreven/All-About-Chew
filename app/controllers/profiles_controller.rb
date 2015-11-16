@@ -8,7 +8,6 @@ class ProfilesController < ApplicationController
   end
 
   def create
-
     @profile = Profile.new(profile_params)
     if @profile.save
       flash[:notice] = "#{@profile.name} was successfully created."
@@ -27,9 +26,16 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
   end
 
-
   def update
+    @profile = Profile.find(params[:id])
+    if @profile.update(profile_params)
+      flash[:notice] = "#{@profile.name} was successfully updated."
+      redirect_to @profile
+    else
+      render :edit
+    end
   end
+
 
   def destroy
   end

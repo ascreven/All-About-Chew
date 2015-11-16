@@ -1,5 +1,5 @@
 <h1><%= @profile.name%></h1>
-
+<h2><%= link_to "(edit)", edit_profile_path(@profile) %></h2>
 <div class:'location'>
   <p>City: <%= @profile.city %></p>
   <p>State: <%= @profile.state %></p>
@@ -10,6 +10,6 @@
   <p>Age: <%= @profile.age %></p>
   <p>Gender: <%= @profile.gender %></p>
   <img class='profile_picture' src="<%= @profile.pro_pic%>">
-  <p>Descritption <%= @profile.description %>
+  <p>Description <%= @profile.description %>
 </div>
-  <p>  <%= link_to 'Back', :back, class: "back" %></p>
+<p>  <%= link_to 'Back', :back, class: "back" %></p>
