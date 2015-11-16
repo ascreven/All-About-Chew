@@ -6,7 +6,7 @@
   <%= f.text_field :name %>
 
   <%= f.label :gender %>
-  <%= f.check_box :gender %>
+  <%= f.select :gender, [["Male", 'Male'], ["Female", "Female"]] %>
 
   <%= f.label :breed %>
   <%= f.text_field :breed %>
