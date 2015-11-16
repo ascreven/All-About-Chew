@@ -8,22 +8,7 @@
 <div class:'info'>
   <p>Breed: <%= @profile.breed %></p>
   <p>Age: <%= @profile.age %></p>
-  <%= @
-
-  <%= f.label :female %>
-  <%= f.check_box :female %>
-  <%= f.label :male %>
-  <%= f.check_box :male %>
-
-
-  <%=f.label :pro_pic %>
-  <%= f.file_field :image, class: "form-control" %>
-
-  <%= f.label :description %>
-  <%= f.text_field :description, class: "description_para" %>
-
-  <p>
-    <%= f.submit %>
-    <%= link_to 'Back', :back, class: "back" %>
-  </p>
-<% end %>
+  <img class='profile_picture' src="<%= @profile.pro_pic%>">
+  <p>Descritption <%= @profile.description %>
+</div>
+  <p>  <%= link_to 'Back', :back, class: "back" %></p>

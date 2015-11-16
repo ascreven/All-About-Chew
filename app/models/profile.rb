@@ -1,3 +1,3 @@
-class Artist < ActiveRecord::Base
+class Profile < ActiveRecord::Base
   has_many :posts, dependent: :destroy
 end
