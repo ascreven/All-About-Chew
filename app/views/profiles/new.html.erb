@@ -1,13 +1,12 @@
 <h1>New Profile</h1>
-<%= form_for :profile do |f| %>
+<%= form_for @profile do |f| %>
+
 
   <%= f.label :name %>
   <%= f.text_field :name %>
 
-  <%= f.label :female %>
-  <%= f.check_box :female %>
-  <%= f.label :male %>
-  <%= f.check_box :male %>
+  <%= f.label :gender %>
+  <%= f.check_box :gender %>
 
   <%= f.label :breed %>
   <%= f.text_field :breed %>
@@ -15,14 +14,14 @@
   <%= f.label :city %>
   <%= f.text_field :city %>
 
- <%=select_tag 'State', options_for_select(us_states),:name=>"state",:id=>"state"%>
+ <%= select_tag 'State', options_for_select(us_states),:name=>"profile[state]",:id=>"state"%>
 
 
   <%= f.label :age %>
   <%= f.number_field :age %>
 
   <%=f.label :pro_pic %>
-  <%= f.file_field :image, class: "form-control" %>
+  <%= f.file_field :pro_pic, class: "form-control" %>
 
   <%= f.label :description %>
   <%= f.text_field :description, class: "description_para" %>
