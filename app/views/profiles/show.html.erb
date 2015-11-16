@@ -1,0 +1,29 @@
+<h1><%= @profile.name%></h1>
+
+<div class:'location'>
+  <p>City: <%= @profile.city %></p>
+  <p>State: <%= @profile.state %></p>
+</div>
+
+<div class:'info'>
+  <p>Breed: <%= @profile.breed %></p>
+  <p>Age: <%= @profile.age %></p>
+  <%= @
+
+  <%= f.label :female %>
+  <%= f.check_box :female %>
+  <%= f.label :male %>
+  <%= f.check_box :male %>
+
+
+  <%=f.label :pro_pic %>
+  <%= f.file_field :image, class: "form-control" %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description, class: "description_para" %>
+
+  <p>
+    <%= f.submit %>
+    <%= link_to 'Back', :back, class: "back" %>
+  </p>
+<% end %>

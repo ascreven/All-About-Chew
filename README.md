@@ -10,7 +10,5 @@ USER STORIES
 4.) Accounts can be deleted when pet finds a forever home.
 5.) Users can favorite their favorite dogs.
 6.) Contact information for each dog is available.
-
-
-
-
+7.) Can look for cats or dogs
+8.) Can specify breeds

@@ -4,5 +4,8 @@ class WelcomeController < ApplicationController
 
   def create
     render plain: params[:profile].inspect
+    @profile = Profile.new(params[:profile])
+    @profile.save
+    redirect_to @profile
   end
 end
