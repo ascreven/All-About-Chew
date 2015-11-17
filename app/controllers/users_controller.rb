@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   end
 
   def sign_in!
-    @user = User.find_by(username: params[:username])
+    @user = User.find(params[:username])
     if !@user
       message = "This user doesn't exist!"
     elsif !BCrypt::Password.new(@user.password_digest).is_password?(params[:password])
