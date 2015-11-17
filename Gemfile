@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'devise'
 
+gem 'devise'
+# passwords are enrypted
+gem 'bcrypt'
+# users can upload pictures
 gem "carrierwave"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

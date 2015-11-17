@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   def index
-    @profiles = Profile.all
+    @profiles = User.find(session[:user]["id"]).profiles
   end
 
   def new
@@ -8,13 +8,17 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.new(profile_params)
+    @user = User.find(session[:user]["id"])
+    @profile = @user.profiles.create!(profile_params)
     if @profile.save
       flash[:notice] = "#{@profile.name} was successfully created."
-      redirect_to @profile
+      redirect_to (artist_path(@profile))
     else
       render :new
     end
+
+
+
   end
 
 

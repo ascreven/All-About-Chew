@@ -2,3 +2,6 @@
 
 <!-- refer to profiles/_form.html.erb -->
 <%= render 'form' %>
+
+<!-- Delete profile -->
+<%= link_to 'Delete!', profile_path(@profile), method: :delete, class: 'delete' %>
