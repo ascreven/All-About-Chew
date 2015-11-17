@@ -11,8 +11,8 @@
     <% if session[:user] %>
       <a href="/sign_out"><%= session[:user]["username"] %>: sign out</a></h2>
     <% else %>
-      <a href="/sign_up">Sign up</a>
-      <a href="/sign_in">Sign in</a>
+      <%= link_to 'Sign Up',  new_user_registration_path %>
+      <%= link_to 'Sign In',  new_user_session_path %>
     <% end %>
   </nav>
   <p class="notice"><%= notice %></p>
