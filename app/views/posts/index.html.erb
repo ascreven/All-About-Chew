@@ -1,0 +1,16 @@
+<h1>Listing your posts</h1>
+<%= form_for([current_user, current_user.posts.build]) do |f| %>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_field :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<ul>
+  <% @posts.each do |post| %>
+  <li><%= post.body %></li>
+  <% end %>
+</ul>
