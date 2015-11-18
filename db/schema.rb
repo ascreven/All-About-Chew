@@ -16,13 +16,6 @@ ActiveRecord::Schema.define(version: 20151118084904) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "posts", force: :cascade do |t|
-    t.integer  "user_id"
-    t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "profiles", force: :cascade do |t|
     t.string  "name",        null: false
     t.string  "gender",      null: false
@@ -52,4 +45,5 @@ ActiveRecord::Schema.define(version: 20151118084904) do
     t.datetime "updated_at",                          null: false
   end
 
+  add_foreign_key "profiles", "users"
 end
