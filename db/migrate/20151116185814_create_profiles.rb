@@ -1,5 +1,6 @@
 class CreateProfiles < ActiveRecord::Migration
   def change
+    add_column :line_items, :user_id, :int
     create_table :profiles do |t|
       t.string :name, null: false
       t.string :gender, null: false

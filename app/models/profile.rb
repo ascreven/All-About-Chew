@@ -1,7 +1,6 @@
 class Profile < ActiveRecord::Base
   has_many :posts, dependent: :destroy
   belongs_to :user
-  has_many :posts, dependent: :destroy
   validates :name, presence: true
   validates :age, presence: true
   validates :breed, presence: true

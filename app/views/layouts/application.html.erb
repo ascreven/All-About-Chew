@@ -8,11 +8,11 @@
 </head>
 <body>
   <nav>
-    <% if session[:user] %>
-      <a href="/sign_out"><%= session[:user]["username"] %>: sign out</a></h2>
+    <% if current_user %>
+      <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
     <% else %>
-      <%= link_to 'Sign Up',  new_user_registration_path %>
-      <%= link_to 'Sign In',  new_user_session_path %>
+      <h3><%= link_to 'Signup', new_user_registration_path %></h3>
+      <h3><%= link_to 'Login', new_user_session_path %></h3>
     <% end %>
   </nav>
   <p class="notice"><%= notice %></p>

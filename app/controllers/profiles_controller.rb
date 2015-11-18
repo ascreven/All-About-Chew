@@ -1,6 +1,10 @@
 class ProfilesController < ApplicationController
+  # before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  # before_action :authenticate_user!, except: [:index, :show]
   def index
-    @profiles = User.find(session[:user]["id"]).profiles
+    @profiles = current_user.profiles
+    # @user = User.find(session[:user]["id"])
+    # @profiles = User.find(session[:user]["id"]).profiles
   end
 
   def new
@@ -8,17 +12,16 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @user = User.find(session[:user]["id"])
-    @profile = @user.profiles.create!(profile_params)
+    @profile = Profile.create!(profile_params)
+    # @user = current_user
+    # @profile = current_user.profiles.create!(profile_params)
+    # @user.profiles.create(user: current_user)
     if @profile.save
-      flash[:notice] = "#{@profile.name} was successfully created."
-      redirect_to (artist_path(@profile))
+      # flash[:notice] = "#{@profile.name} was successfully created."
+      redirect_to (profile_path(@profile))
     else
       render :new
     end
-
-
-
   end
 
 
