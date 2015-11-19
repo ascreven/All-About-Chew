@@ -1,2 +1,8 @@
-<h1>Home (static_pages)</h1>
-<h2><a href="/profiles/new">(New Profile)</a></h2>
+<h1>All About Chew</h1>
+<% if current_user %>
+      <h2><a href="/profiles/new">(New Profile)</a></h2>
+      <h2><a href="profiles#index">Home</a></h2>
+
+<% else %>
+  <h3><%= 'Not Working!!' %></h3>
+  <% end %>

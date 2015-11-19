@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users
   resources :profiles
   root 'welcome#index'
+  devise_for :users, controllers: { registrations: 'users/registrations', passwords: 'users/passwords' }
+
+
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
