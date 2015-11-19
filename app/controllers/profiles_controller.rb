@@ -1,9 +1,14 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+
+  def sort
+    session[:sort_by] = params[:sort_by]
+    redirect_to profiles_path
+  end
+
   def index
-    @user = current_user
-    @profiles = current_user.profiles
+    @profiles = Profile.all.order(session[:sort_by])
     # @user = User.find(session[:user]["id"])
     # @profiles = User.find(session[:user]["id"]).profiles
   end
