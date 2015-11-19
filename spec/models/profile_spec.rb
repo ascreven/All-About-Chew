@@ -1,17 +1,13 @@
 require "rails_helper"
 
 RSpec.describe Profile, :type => :model do
-
-  before do
-  User.create!(id: 1, email: 'test@example.com', password: 'password', sign_in_count: 1, created_at: '2015', updated_at: '2015')
-  expect(User.count).to eq 1
-  end
   it 'has class of Profile'
   it 'orders by name' do
     chloe = Profile.create!(name: 'Chloe', gender: 'female', breed: 'German Shepard', city: 'Tucson', state: 'Arizona', age: 15, pro_pic: 'rayban.jpg', description: 'test', user_id: 1)
     charlie = Profile.create!(name: 'Chloe', gender: 'female', breed: 'German Shepard', city: 'Tucson', state: 'Arizona', age: 15, pro_pic: 'rayban.jpg', description: 'test', user_id: 1)
 
     expect(Profile.ordered_by_name).to eq([charlie, chloe])
+    expect(Profile.count).to eq 2
   end
 end
 # id                     | integer                     | not null default nextval('users_id_seq'::regclass)
