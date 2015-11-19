@@ -1,7 +1,8 @@
 class ProfilesController < ApplicationController
-  # before_action :set_profile, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
   def index
+    @user = current_user
     @profiles = current_user.profiles
     # @user = User.find(session[:user]["id"])
     # @profiles = User.find(session[:user]["id"]).profiles
