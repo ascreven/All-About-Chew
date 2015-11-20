@@ -51,6 +51,7 @@ class ProfilesController < ApplicationController
 
 
   def destroy
+    
   end
 
   private
