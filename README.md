@@ -4,6 +4,11 @@ Blog for foster animals
 
 USER STORIES
 
+
+1.) List foster pets
+2.) Shelters can create sites for new pets
+
+
 1.) Foster pets have blog profiles where their foster owners can write about living with them.
 2.) People looking for dogs can search for dogs by breed.
 3.) Foster owners can sign into their account to create a new blog post.
