@@ -11,9 +11,9 @@ before_filter :configure_sign_in_params, only: [:create]
   #   super
   # end
 
-  DELETE /resource/sign_out
+  # DELETE /resource/sign_out
   def destroy
-    
+
   end
 
   # protected
