@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
   end
 
   def index
-    @profiles = Profile.all.order(session[:sort_by])
+    @profiles = current_user.profiles
     # @user = User.find(session[:user]["id"])
     # @profiles = User.find(session[:user]["id"]).profiles
   end
@@ -51,7 +51,7 @@ class ProfilesController < ApplicationController
 
 
   def destroy
-    
+
   end
 
   private
