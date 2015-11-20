@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <title>AllAboutChew</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="jumbotron">
+  <div class="container">
+    <h1> All About Chew </h1>
+  </div>
+</div>
   <nav>
     <% if current_user %>
       <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
