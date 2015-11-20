@@ -1,22 +1,21 @@
-<h1>All My Profiles</h1>
-<h2><%= current_user.profiles.name %></h2>
-<h2><%= current_user.id %></h2>
-<h2><a href="/profiles/new">(New Profile)</a></h2>
-<table>
-  <thead>
-    <tr>
-      <th>Body</th>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h1>My Profiles</h1>
+<p><a href="/profiles/new">New Profile</a></p>
 
-  <tbody>
+
+<div class='container'>
+      <div class='row'>
     <% @profiles.each do |profile| %>
-      <tr>
-        <td><%= profile.name %></td>
-        
-      </tr>
+
+        <div class="col-md-3">
+          <div class='caption'>
+            <h2><%= profile.name %></h2>
+          <div class='thumbnail'>
+            <img><%= image_tag profile.pro_pic %></img>
+          </div>
+
+          </div>
+        </div>
+
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
