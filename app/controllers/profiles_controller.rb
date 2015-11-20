@@ -18,21 +18,23 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.create!(profile_params)
+    @profile = current_user.profiles.create!(profile_params)
+    # @profile = Profile.create!(profile_params)
     # @user = current_user
     # @profile = current_user.profiles.create!(profile_params)
     # @user.profiles.create(user: current_user)
-    if @profile.save
+    # if @profile.save
       # flash[:notice] = "#{@profile.name} was successfully created."
-      redirect_to (profile_path(@profile))
-    else
-      render :new
-    end
+      @profiles = current_user.profiles
+      # redirect_to @profiles
+      render :show
+    # else
+      # render :new
+    # end
   end
 
 
   def show
-    @profile = Profile.find(params[:id])
   end
 
   def edit
