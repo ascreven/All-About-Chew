@@ -7,5 +7,6 @@
   <% else %>
     <% @profiles.each do |profile| %>
     <h2><%= profile.name %></h2>
+  <img class='post_photo'><%= image_tag profile.pro_pic %></img>
   <% end %>
 <% end %>
