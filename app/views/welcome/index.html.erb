@@ -7,6 +7,6 @@
   <% else %>
     <% @profiles.each do |profile| %>
     <h2><%= profile.name %></h2>
-  <img class='post_photo'><%= image_tag profile.pro_pic %></img>
+  <a class='img-responsive' alt="Responsive image"><%= image_tag profile.pro_pic %></img>
   <% end %>
 <% end %>
