@@ -1,19 +1,14 @@
 # All-About-Chew
-Blog for foster animals
+Find dogs at local animal rescues
+
+TECHNOLOGIES USED
+
+- Bootstrap for SASS - helped with formatting, especially on forms
+- Devise - To create user authentication
+- Bcrypt - encrypt user passwords
+-Postgresql - Database
 
 
-USER STORIES
+PROBLEMS
 
-
-1.) List foster pets
-2.) Shelters can create sites for new pets
-
-
-1.) Foster pets have blog profiles where their foster owners can write about living with them.
-2.) People looking for dogs can search for dogs by breed.
-3.) Foster owners can sign into their account to create a new blog post.
-4.) Accounts can be deleted when pet finds a forever home.
-5.) Users can favorite their favorite dogs.
-6.) Contact information for each dog is available.
-7.) Can look for cats or dogs
-8.) Can specify breeds
+It was difficult for me to understand what was happening in the background so I created a lot of extra controllers using methods such as 'rails generate devise:views users'. This definitely helped me make sense of everything but it made the different folders difficult to keep track of.
