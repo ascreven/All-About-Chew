@@ -1,8 +1,8 @@
 
   <% if current_user %>
-      <h2>Hello <%= current_user.id %></h2>
       <h2><a href="/profiles/new">(New Profile)</a></h2>
       <h2><a href="profiles#index">Home</a></h2>
+      <h1><%=current_user.profiles.name%><h1>
 
   <% else %>
   <div class='container'>
