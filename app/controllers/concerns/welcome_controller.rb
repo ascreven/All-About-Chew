@@ -1,5 +1,10 @@
 class WelcomeController < ApplicationController
 def index
-  @profiles = Profile.all
+  if current_user
+    @profiles = current_user.profiles
+  else
+    @profiles = Profiles.all
+  end
 end
+
 end
