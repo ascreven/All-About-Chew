@@ -8,10 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <!-- mms: indentation -->
   <div class="jumbotron">
   <div class="container">
     <h1> All About Chew </h1>
-    
+
   </div>
 </div>
 
@@ -19,6 +20,7 @@
     <ul class="nav navbar-nav navbar-left">
 
       <% if current_user %>
+        <!-- mms: recommend you move "home" link out of conditional.  It is alsways shown -->
         <li><%= link_to 'Home', root_path%></li>
         <li><%= link_to 'New Profile', new_profile_path %></li>
       <% else %>
